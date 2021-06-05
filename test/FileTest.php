@@ -1,21 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace Stk2k\FileSystem\Test;
+namespace stk2k\filesystem\test;
 
-use Stk2k\FileSystem\Exception\FileInputException;
-use Stk2k\FileSystem\Exception\FileOutputException;
+use stk2k\filesystem\Exception\FileInputException;
+use stk2k\filesystem\Exception\FileOutputException;
 use PHPUnit\Framework\TestCase;
 
 use org\bovigo\vfs\vfsStream;
 
-use Stk2k\FileSystem\Exception\MakeDirectoryException;
-use Stk2k\FileSystem\File;
-use Stk2k\FileSystem\Filter\IsDirectoryFileFilter;
-use Stk2k\FileSystem\Filter\IsFileFileFilter;
-use Stk2k\FileSystem\Filter\ExtensionFileFilter;
-use Stk2k\FileSystem\Filter\ImageFileFilter;
-use Stk2k\FileSystem\Exception\FileRenameException;
+use stk2k\filesystem\Exception\MakeDirectoryException;
+use stk2k\filesystem\File;
+use stk2k\filesystem\Filter\IsDirectoryFileFilter;
+use stk2k\filesystem\Filter\IsFileFileFilter;
+use stk2k\filesystem\Filter\ExtensionFileFilter;
+use stk2k\filesystem\Filter\ImageFileFilter;
+use stk2k\filesystem\Exception\FileRenameException;
 
 class FileTest extends TestCase
 {
@@ -275,7 +275,7 @@ class FileTest extends TestCase
 
             $target_file->put(new SerializableObject(['Foo', 'Bar']));
 
-            $this->assertEquals('C:40:"Stk2k\FileSystem\Test\SerializableObject":34:{a:2:{i:0;s:3:"Foo";i:1;s:3:"Bar";}}', $target_file->get());
+            $this->assertEquals('C:40:"stk2k\filesystem\test\SerializableObject":34:{a:2:{i:0;s:3:"Foo";i:1;s:3:"Bar";}}', $target_file->get());
 
             // put JsonSerializable object
             vfsStream::setup("myrootdir");

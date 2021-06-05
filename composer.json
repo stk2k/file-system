@@ -22,12 +22,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Stk2k\\FileSystem\\": "src/"
+      "stk2k\\filesystem\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Stk2k\\FileSystem\\Test\\": "test/"
+      "stk2k\\filesystem\\test\\": "test/"
     }
   }
 }

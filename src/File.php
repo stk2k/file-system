@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Stk2k\FileSystem;
+namespace stk2k\filesystem;
 
 use Serializable;
 use JsonSerializable;
 
-use Stk2k\FileSystem\Exception\FileInputException;
-use Stk2k\FileSystem\Exception\FileOutputException;
-use Stk2k\FileSystem\Exception\FileRenameException;
-use Stk2k\FileSystem\Exception\MakeFileException;
-use Stk2k\FileSystem\Exception\MakeDirectoryException;
+use stk2k\filesystem\Exception\FileInputException;
+use stk2k\filesystem\Exception\FileOutputException;
+use stk2k\filesystem\Exception\FileRenameException;
+use stk2k\filesystem\Exception\MakeFileException;
+use stk2k\filesystem\Exception\MakeDirectoryException;
 
 class File
 {

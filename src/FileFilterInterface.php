@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Stk2k\FileSystem;
+namespace stk2k\filesystem;
 
 interface FileFilterInterface
 {

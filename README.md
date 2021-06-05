@@ -23,7 +23,7 @@ A simle file system classes
 ### making a file
 
 ```php
-use FileTools\FileSystem;
+use stk2k\filesystem\FileSystem;
 
 FileSystem::put('/path/to/file', 'Hello, World');
 ```
@@ -31,7 +31,7 @@ FileSystem::put('/path/to/file', 'Hello, World');
 ### deleting a file
 
 ```php
-use FileTools\FileSystem;
+use stk2k\filesystem\FileSystem;
 
 FileSystem::delete('/path/to/file');
 ```
@@ -39,7 +39,7 @@ FileSystem::delete('/path/to/file');
 ### getting file's content
 
 ```php
-use FileTools\FileSystem;
+use stk2k\filesystem\FileSystem;
 
 // getting whole content as string
 $ret = FileSystem::get('/path/to/file');
@@ -53,8 +53,8 @@ print_r($ret);
 ### putting file's content
 
 ```php
-use FileTools\File;
-use FileTools\FileSystem;
+use stk2k\filesystem\File;
+use stk2k\filesystem\FileSystem;
 
 // putting string content
 $ret = FileSystem::put('/path/to/file', 'Hello, World!');
@@ -87,9 +87,9 @@ echo $ret->get();       // Hello, World!
 ### file object
 
 ```php
-use FileTools\File;
+use stk2k\filesystem\File;
 
-$file = new File('/path/to/file');
+$ret = new File('/path/to/file');
 echo $ret->get();
 ```
 

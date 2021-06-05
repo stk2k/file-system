@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Stk2k\FileSystem\Util;
+namespace stk2k\filesystem\Util;
 
-use Stk2k\FileSystem\Exception\FileOpenException;
-use Stk2k\FileSystem\Exception\FileOutputException;
-use Stk2k\FileSystem\File;
+use stk2k\filesystem\Exception\FileOpenException;
+use stk2k\filesystem\Exception\FileOutputException;
+use stk2k\filesystem\File;
 
 class IniFileWriter
 {

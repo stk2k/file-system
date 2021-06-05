@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Stk2k\FileSystem\Filter;
+namespace stk2k\filesystem\Filter;
 
-use Stk2k\FileSystem\FileFilterInterface;
-use Stk2k\FileSystem\File;
+use stk2k\filesystem\FileFilterInterface;
+use stk2k\filesystem\File;
 
 class ImageFileFilter implements FileFilterInterface
 {

@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Stk2k\FileSystem\Util;
+namespace stk2k\filesystem\Util;
 
-use Stk2k\FileSystem\File;
-use Stk2k\FileSystem\Exception\NotFileException;
-use Stk2k\FileSystem\Exception\NotDirectoryException;
-use Stk2k\FileSystem\Exception\FileIsNotReadableException;
-use Stk2k\FileSystem\Exception\FileOpenException;
-use Stk2k\FileSystem\Exception\FileOutputException;
-use Stk2k\FileSystem\Exception\FileCopyException;
+use stk2k\filesystem\File;
+use stk2k\filesystem\Exception\NotFileException;
+use stk2k\filesystem\Exception\NotDirectoryException;
+use stk2k\filesystem\Exception\FileIsNotReadableException;
+use stk2k\filesystem\Exception\FileOpenException;
+use stk2k\filesystem\Exception\FileOutputException;
+use stk2k\filesystem\Exception\FileCopyException;
 
 class FileSystemUtil
 {

@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Stk2k\FileSystem\Test\Util;
+namespace stk2k\filesystem\test\Util;
 
 use PHPUnit\Framework\TestCase;
 use org\bovigo\vfs\vfsStream;
-use Stk2k\FileSystem\Util\IniFileWriter;
+use stk2k\filesystem\Util\IniFileWriter;
 use Exception;
 
 class IniFileWriterTest extends TestCase
