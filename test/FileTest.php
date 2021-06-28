@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 use org\bovigo\vfs\vfsStream;
 
+use stk2k\filesystem\Exception\FileOperatorException;
 use stk2k\filesystem\Exception\MakeDirectoryException;
 use stk2k\filesystem\File;
 use stk2k\filesystem\Filter\IsDirectoryFileFilter;
@@ -409,6 +410,27 @@ class FileTest extends TestCase
         catch(MakeDirectoryException $e)
         {
             $this->fail($e->getMessage());
+        }
+    }
+
+    public function testOpenForRead()
+    {
+        vfsStream::setup("myrootdir");
+        vfsStream::copyFromFileSystem(__DIR__ . '/files');
+
+        $target_file = new File(vfsStream::url('myrootdir/a.txt'));
+
+        try{
+            $r = $target_file->openForRead();
+
+            $str = $r->read(10000);
+
+            $expected = file_get_contents('test/files/a.txt');
+
+            $this->assertEquals($expected, $str);
+        }
+        catch(FileInputException|FileOperatorException $e){
+            $this->assertTrue(true);
         }
     }
 }

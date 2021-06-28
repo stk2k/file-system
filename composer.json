@@ -27,7 +27,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "stk2k\\filesystem\\test\\": "test/"
+      "stk2k\\filesystem\\test\\": "test/",
+      "stk2k\\filesystem\\test\\classes\\": "test/classes/"
     }
   }
 }

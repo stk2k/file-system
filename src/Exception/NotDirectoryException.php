@@ -13,13 +13,12 @@ class NotDirectoryException extends FileSystemException
      * NotDirectoryException constructor.
      *
      * @param File $file
-     * @param int $code
      * @param Throwable|null $prev
      */
-    public function __construct( File $file, int $code = 0, Throwable $prev = null)
+    public function __construct( File $file, Throwable $prev = null)
     {
         $message = "Not directory: $file";
-        parent::__construct($message, $code, $prev);
+        parent::__construct($message, $prev);
     }
 }
 

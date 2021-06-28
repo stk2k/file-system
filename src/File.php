@@ -5,6 +5,7 @@ namespace stk2k\filesystem;
 
 use Serializable;
 use JsonSerializable;
+use InvalidArgumentException;
 
 use stk2k\filesystem\Exception\FileInputException;
 use stk2k\filesystem\Exception\FileOutputException;
@@ -17,6 +18,9 @@ class File
     const DS = DIRECTORY_SEPARATOR;
 
     const MAKEDIRECTORY_DEFAULT_MODE = 0777;
+
+    const FILE_WRITE_TRUNCATE   = 1;
+    const FILE_WRITE_APPEND     = 2;
 
     private $path;
 
@@ -275,6 +279,43 @@ class File
     }
 
     /**
+     * Open a file for reading
+     *
+     * @return FileReader
+     * @throws FileInputException
+     */
+    public function openForRead() : FileReader
+    {
+        $fp = fopen($this->path, 'r');
+        if ($fp === false){
+            throw new FileInputException($this, 'Failed to open a file for reading');
+        }
+        return new FileReader($fp, $this);
+    }
+
+    /**
+     * Open a file for wrting
+     *
+     * @param int $flag
+     *
+     * @return FileWriter
+     * @throws FileOutputException
+     */
+    public function openForWrite(int $flag = self::FILE_WRITE_TRUNCATE) : FileWriter
+    {
+        $map = [
+            self::FILE_WRITE_TRUNCATE => 'w',
+            self::FILE_WRITE_APPEND => 'a',
+        ];
+        $mode = $map[$flag] ?? 'w';
+        $fp = fopen($this->path, $mode);
+        if ($fp === false){
+            throw new FileOutputException($this, 'Failed to open a file for reading');
+        }
+        return new FileWriter($fp, $this);
+    }
+
+    /**
      *  get contents of the file as array
      *
      * @param int $flags
@@ -292,9 +333,9 @@ class File
      * @param string|array|Serializable|JsonSerializable $contents
      * @param bool $ex_lock
      *
-     * @return File
-     *
-     * @throws FileOutputException|FileInputException
+     * @return $this
+     * @throws FileInputException
+     * @throws FileOutputException
      */
     public function put($contents, bool $ex_lock = false) : self
     {
@@ -321,13 +362,13 @@ class File
         }
 
         if (!is_string($contents)){
-            throw new FileOutputException($this);
+            throw new InvalidArgumentException('Invalid contents paramter');
         }
 
         $flags = $ex_lock ? LOCK_EX : 0;
         $res = file_put_contents( $this->path, $contents, $flags );
         if ($res === FALSE){
-            throw new FileOutputException($this);
+            throw new FileOutputException($this, 'Failed to put contents');
         }
         return $this;
     }

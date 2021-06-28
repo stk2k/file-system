@@ -12,12 +12,11 @@ class FileSystemException extends Exception implements FileSystemExceptionInterf
      * FileRenameException constructor.
      *
      * @param string $message
-     * @param int $code
      * @param Throwable|null $prev
      */
-    public function __construct(string $message, int $code = 0, Throwable $prev = NULL )
+    public function __construct(string $message, Throwable $prev = NULL )
     {
-        parent::__construct($message, $code, $prev);
+        parent::__construct($message, 0, $prev);
     }
 }
 

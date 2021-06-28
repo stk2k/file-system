@@ -14,13 +14,12 @@ class FileRenameException extends FileSystemException
      *
      * @param File $old_file
      * @param File $new_file
-     * @param int $code
      * @param Throwable|null $prev
      */
-    public function __construct( File $old_file, File $new_file, int $code = 0, Throwable $prev = NULL )
+    public function __construct( File $old_file, File $new_file, Throwable $prev = NULL )
     {
         $message = "File renaming failed: {$old_file} to {$new_file}";
-        parent::__construct($message, $code, $prev);
+        parent::__construct($message, $prev);
     }
 }
 
