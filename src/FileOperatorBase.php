@@ -106,7 +106,7 @@ class FileOperatorBase
      *
      * @return File
      */
-    protected function getFile() : File
+    public function getFile() : File
     {
         return $this->file;
     }
