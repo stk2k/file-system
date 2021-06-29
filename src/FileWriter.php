@@ -34,6 +34,22 @@ final class FileWriter extends FileOperatorBase
     }
 
     /**
+     * Flushes file buffer
+     *
+     * @throws FileWriterException
+     */
+    public function flush() : void
+    {
+        if ($this->isClosed()){
+            throw new FileWriterException('File operator is already closed: ' . $this->getFile());
+        }
+        $ret = fflush($this->getFilePointer());
+        if ($ret === false){
+            throw new FileWriterException('Failed to flush file: ' . $this->getFile());
+        }
+    }
+
+    /**
      * Writes file
      *
      * @param string $data
