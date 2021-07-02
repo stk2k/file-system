@@ -42,11 +42,14 @@ class FileReader extends FileOperatorBase
      */
     public function read(int $length) : ?string
     {
+        if ($length <= 0){
+            throw new InvalidArgumentException('Length paramter must be greater than 0: ' . (string)$length);
+        }
         if ($this->isClosed()){
             throw new FileReaderException('File operator is already closed: ' . $this->getFile());
         }
-        if ($length <= 0){
-            throw new InvalidArgumentException('Length paramter must be greater than 0: ' . (string)$length);
+        if ($this->isEOF()){
+            return null;
         }
         $str = fread($this->getFilePointer(), $length);
         if ($str === false){
@@ -66,6 +69,9 @@ class FileReader extends FileOperatorBase
         if ($this->isClosed()){
             throw new FileReaderException('File operator is already closed: ' . $this->getFile());
         }
+        if ($this->isEOF()){
+            return null;
+        }
         $str = fgetc($this->getFilePointer());
         if ($str === false){
             return null;
@@ -83,11 +89,14 @@ class FileReader extends FileOperatorBase
      */
     public function getLine(int $length = null) : ?string
     {
+        if ($length !== null && $length <= 0){
+            throw new InvalidArgumentException('Length paramter must be greater than 0: ' . (string)$length);
+        }
         if ($this->isClosed()){
             throw new FileReaderException('File operator is already closed: ' . $this->getFile());
         }
-        if ($length !== null && $length <= 0){
-            throw new InvalidArgumentException('Length paramter must be greater than 0: ' . (string)$length);
+        if ($this->isEOF()){
+            return null;
         }
         $str = $length === null ? fgets($this->getFilePointer()) : fgets($this->getFilePointer(), $length);
         if ($str === false){

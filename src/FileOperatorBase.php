@@ -43,7 +43,7 @@ class FileOperatorBase
      */
     public function isEOF() : bool
     {
-        return $this->isClosed() || feof($this->fp);
+        return $this->fp && feof($this->fp);
     }
 
     /**
