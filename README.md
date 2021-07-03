@@ -128,5 +128,3 @@ This software is no warranty.
 We are not responsible for any results caused by the use of this software.
 
 Please use the responsibility of the your self.
-
-
