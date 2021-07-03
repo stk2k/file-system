@@ -1,12 +1,12 @@
 A simle file system classes
 =======================
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/stk2k/file-tools.svg?style=flat-square)](https://packagist.org/packages/stk2k/file-tools)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/stk2k/file-system.svg?style=flat-square)](https://packagist.org/packages/stk2k/file-system)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://travis-ci.org/stk2k/file-tools.svg?branch=master)](https://travis-ci.org/stk2k/file-tools)
-[![Coverage Status](https://coveralls.io/repos/github/stk2k/file-tools/badge.svg?branch=master)](https://coveralls.io/github/stk2k/file-tools?branch=master)
-[![Code Climate](https://codeclimate.com/github/stk2k/file-tools/badges/gpa.svg)](https://codeclimate.com/github/stk2k/file-tools)
-[![Total Downloads](https://img.shields.io/packagist/dt/stk2k/file-tools.svg?style=flat-square)](https://packagist.org/packages/stk2k/file-tools)
+[![Build Status](https://travis-ci.org/stk2k/file-system.svg?branch=master)](https://travis-ci.org/stk2k/file-system)
+[![Coverage Status](https://coveralls.io/repos/github/stk2k/file-system/badge.svg?branch=master)](https://coveralls.io/github/stk2k/file-system?branch=master)
+[![Code Climate](https://codeclimate.com/github/stk2k/file-system/badges/gpa.svg)](https://codeclimate.com/github/stk2k/file-system)
+[![Total Downloads](https://img.shields.io/packagist/dt/stk2k/file-system.svg?style=flat-square)](https://packagist.org/packages/stk2k/file-system)
 
 ## Description
 
@@ -99,13 +99,13 @@ echo $ret->get();
 
 PHP 7.2 or later
 
-## Installing stk2k/file-tools
+## Installing stk2k/file-system
 
-The recommended way to install stk2k/file-tools is through
+The recommended way to install stk2k/file-system is through
 [Composer](http://getcomposer.org).
 
 ```bash
-composer require stk2k/file-tools
+composer require stk2k/file-system
 ```
 
 After installing, you need to require Composer's autoloader:
