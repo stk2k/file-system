@@ -3,7 +3,7 @@ A simle file system classes
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stk2k/file-system.svg?style=flat-square)](https://packagist.org/packages/stk2k/file-system)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://travis-ci.org/stk2k/file-system.svg?branch=master)](https://travis-ci.org/stk2k/file-system)
+[![Build Status](https://api.travis-ci.com/stk2k/file-system.svg?branch=main)](https://api.travis-ci.com/stk2k/file-system.svg?branch=main)
 [![Coverage Status](https://coveralls.io/repos/github/stk2k/file-system/badge.svg?branch=master)](https://coveralls.io/github/stk2k/file-system?branch=master)
 [![Code Climate](https://codeclimate.com/github/stk2k/file-system/badges/gpa.svg)](https://codeclimate.com/github/stk2k/file-system)
 [![Total Downloads](https://img.shields.io/packagist/dt/stk2k/file-system.svg?style=flat-square)](https://packagist.org/packages/stk2k/file-system)
